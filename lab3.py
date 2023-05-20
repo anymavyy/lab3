@@ -47,11 +47,11 @@ if (n / 2) % 2 != 0:  # подсчёт по условию
     for i in range(n // 2 + 1, n // 2 + n // 4 + 2):  # рассматриваем 3 область
         for j in range(n // 2 + n // 4 + 1, n):
             if i % 2 == 0 and i >= n - (j - n // 2):
-                chisl += 1
+                chisl += F[i][j]
     for i in range(n // 2 + n // 4 + 2, n):  # рассматриваем 3 область
         for j in range(n // 2 + n // 4 + 1, n):
             if i % 2 == 0 and i <= j:
-                chisl += 1
+                chisl += F[i][j]
 elif n % 2 == 0 and n % 4 == 0:  # подсчёт по условию
     for i in range(n // 2 + 1, n // 2 + n // 4):  # рассматриваем 1 область
         for j in range(n // 2 + 1, n // 2 + n // 4):
@@ -65,11 +65,11 @@ elif n % 2 == 0 and n % 4 == 0:  # подсчёт по условию
     for i in range(n // 2, n // 2 + n // 4):  # рассматриваем 3 область
         for j in range(n // 2 + n // 4, n):
             if i % 2 == 0 and i >= n - (j - n // 2 + 1):
-                chisl += 1
+                chisl += F[i][j]
     for i in range(n // 2 + n // 4, n):  # рассматриваем 3 область
         for j in range(n // 2 + n // 4, n):
             if i % 2 == 0 and i <= j:
-                chisl += 1
+                chisl += F[i][j]
 if kol > chisl and p == 1:  # если kol > chisl и матрица нечёт.
     print("Меняем местами элементы в зависимости от результата сравнения:")
     for i in range(n // 2, n // 2 + n // 4 + 2):  # В E меняем симметрично 1 и 3
